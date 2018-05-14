@@ -1,0 +1,12 @@
+<h1>Your result</h1>
+
+<span>You wrote:</span>
+
+<% @word_arr.each do |letter| %>
+<span><%= letter%></span>
+<% end %>
+
+<p><%= @var %></p>
+
+
+<%= link_to 'Guess a new word', new_path %>

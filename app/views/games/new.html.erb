@@ -1,0 +1,16 @@
+<h1>Compose a word!</h1>
+
+<p> just letters <%= @letters %></p>
+<p>letters string <%= @letters_str %></p>
+
+<% @letters.each do |letter| %>
+<span><%= letter%></span>
+<% end %>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @letters_str %>
+  <%= hidden_field_tag :score, @score %>
+  <input type="text" name="word" placeholder="word">
+  <input type="submit">
+</form>
